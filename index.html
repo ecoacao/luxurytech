@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>LuxuryTech • Todos os iPhones • Importação Premium</title>
-  <!-- Google Fonts: Poppins (conforme solicitado) -->
+  <title>LuxuryTech • Todos os iPhones • Compra Directa</title>
+  <!-- Google Fonts: Poppins -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ----- RESET & VARIÁVEIS (ESTILO TRADICIONAL) ----- */
+    /* ----- RESET & VARIÁVEIS ----- */
     * {
       margin: 0;
       padding: 0;
@@ -21,10 +21,9 @@
     :root {
       --preto-tradicional: #222222;
       --cinza-escuro: #333333;
-      --laranja-principal: #F15025;  /* Laranja vibrante mas elegante */
+      --laranja-principal: #F15025;
       --laranja-escuro: #D64F1A;
-      --laranja-claro: #FF7F4F;
-      --bege-fundo: #F9F5F0;         /* Fundo suave estilo tradicional */
+      --bege-fundo: #F9F5F0;
       --branco-puro: #FFFFFF;
       --cinza-claro: #EDEDED;
       --cinza-borda: #DDDDDD;
@@ -75,7 +74,7 @@
       color: var(--preto-tradicional);
       cursor: pointer;
       transition: var(--transicao);
-      border-radius: 0;  /* Estilo mais tradicional, sem bordas arredondadas */
+      border-radius: 0;
       text-decoration: none;
       background-color: transparent;
     }
@@ -96,7 +95,7 @@
       border-color: var(--laranja-escuro);
     }
 
-    /* ===== NAVBAR TRADICIONAL ===== */
+    /* ===== NAVBAR ===== */
     .navbar {
       background-color: var(--branco-puro);
       border-bottom: 3px solid var(--laranja-principal);
@@ -154,10 +153,9 @@
     .btn-nav:hover {
       background-color: transparent !important;
       color: var(--laranja-principal) !important;
-      border-bottom-color: var(--laranja-principal) !important;
     }
 
-    /* ===== HERO ESTILO TRADICIONAL ===== */
+    /* ===== HERO ===== */
     .hero {
       background: linear-gradient(135deg, #f5f0e8 0%, #e8dfd2 100%);
       padding: 80px 0;
@@ -230,7 +228,7 @@
       display: block;
     }
 
-    /* ----- PRODUTOS (TODOS OS TELEFONES DISPONÍVEIS) ----- */
+    /* ----- PRODUTOS COM IMAGENS ----- */
     .produtos {
       padding: 80px 0;
       background-color: var(--bege-fundo);
@@ -262,13 +260,18 @@
 
     .card img {
       max-width: 100%;
-      height: 160px;
+      height: 180px;
       object-fit: contain;
       margin-bottom: 15px;
+      transition: transform 0.2s;
+    }
+
+    .card:hover img {
+      transform: scale(1.03);
     }
 
     .card h3 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
       margin-bottom: 5px;
     }
@@ -287,199 +290,27 @@
       flex: 1;
     }
 
+    /* Botão Comprar que redireciona direto para WhatsApp */
     .btn-comprar {
-      background: transparent;
-      border: 2px solid var(--preto-tradicional);
-      color: var(--preto-tradicional);
-      padding: 10px;
+      background: var(--laranja-principal);
+      border: 2px solid var(--laranja-principal);
+      color: white;
+      padding: 12px;
       font-weight: 600;
       cursor: pointer;
       transition: var(--transicao);
       width: 100%;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .btn-comprar:hover {
-      background: var(--preto-tradicional);
-      color: white;
-      border-color: var(--preto-tradicional);
-    }
-
-    /* ----- MODAL TRADICIONAL ----- */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      padding: 20px;
-    }
-    
-    .modal-overlay.active {
-      display: flex;
-      opacity: 1;
-    }
-    
-    .modal-content {
-      background: var(--branco-puro);
-      max-width: 600px;
-      width: 100%;
-      padding: 40px;
-      position: relative;
-      border: 3px solid var(--laranja-principal);
-      box-shadow: 15px 15px 0 rgba(0,0,0,0.2);
-    }
-    
-    .fechar-modal {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 2.5rem;
-      cursor: pointer;
-      color: #999;
-      background: none;
-      border: none;
-      line-height: 1;
-    }
-    
-    .fechar-modal:hover {
-      color: var(--laranja-principal);
-    }
-    
-    .modal-body {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    
-    .modal-produto-img {
-      text-align: center;
-    }
-    
-    .modal-produto-img img {
-      max-width: 180px;
-      max-height: 180px;
-      object-fit: contain;
-    }
-    
-    .modal-detalhes h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    
-    .modal-preco {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--laranja-principal);
-      margin: 10px 0;
-    }
-
-    .caracteristicas {
-      background: var(--bege-fundo);
-      padding: 20px;
-      border: 2px solid var(--cinza-borda);
-      margin: 10px 0;
-    }
-    
-    .caracteristicas h4 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .caracteristicas ul {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-    }
-    
-    .caracteristicas li {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.9rem;
-    }
-    
-    .caracteristicas li i {
-      color: var(--laranja-principal);
-    }
-
-    .seletor-cores {
-      margin: 15px 0;
-    }
-    
-    .cores-disponiveis {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    
-    .cor-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      cursor: pointer;
-      padding: 5px;
-      border: 2px solid transparent;
-    }
-    
-    .cor-item.selected {
-      border-color: var(--laranja-principal);
-    }
-    
-    .cor-bola {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      border: 2px solid #ddd;
-    }
-    
-    .quantidade-selector {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      margin: 20px 0;
-    }
-    
-    .quantidade-selector input {
-      width: 70px;
-      padding: 10px;
-      border: 2px solid var(--cinza-borda);
-      text-align: center;
-      font-weight: 600;
-    }
-    
-    .btn-finalizar {
-      background: var(--laranja-principal);
-      border: none;
-      padding: 15px;
-      width: 100%;
-      font-weight: 700;
-      font-size: 1.2rem;
-      cursor: pointer;
-      transition: var(--transicao);
-      border: 2px solid var(--laranja-principal);
-      color: white;
-    }
-    
-    .btn-finalizar:hover {
       background: transparent;
       color: var(--laranja-principal);
     }
 
-    /* ----- CONTATO TRADICIONAL ----- */
+    /* ----- CONTATO ----- */
     .contato {
       background: var(--preto-tradicional);
       color: white;
@@ -524,7 +355,7 @@
       color: var(--laranja-principal);
     }
 
-    /* ----- FOOTER BEM FEITO (ESTILO TRADICIONAL) ----- */
+    /* ----- FOOTER ----- */
     footer {
       background-color: #1a1a1a;
       color: #aaa;
@@ -588,10 +419,6 @@
       font-family: 'Poppins', sans-serif;
     }
 
-    .newsletter input::placeholder {
-      color: #777;
-    }
-
     .newsletter .btn-subscribe {
       background: var(--laranja-principal);
       border: none;
@@ -601,6 +428,7 @@
       cursor: pointer;
       border: 2px solid var(--laranja-principal);
       transition: var(--transicao);
+      color: white;
     }
 
     .newsletter .btn-subscribe:hover {
@@ -635,7 +463,6 @@
     }
     @media (max-width: 500px) {
       .cards-grid { grid-template-columns: 1fr; }
-      .modal-content { padding: 30px 20px; }
     }
 
     .reveal {
@@ -645,7 +472,7 @@
   </style>
 </head>
 <body>
-  <!-- NAVBAR TRADICIONAL -->
+  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">LUXURY<span>TECH</span></div>
     <div class="menu">
@@ -662,7 +489,7 @@
     <div class="container hero-grid">
       <div class="reveal">
         <h1>Todos os <span class="destaque">iPhones</span><br>Disponíveis</h1>
-        <p>iPhone 12 · 13 · 14 · 15 · SE · XR · 11 · e mais modelos</p>
+        <p>Modelos: 15 Pro · 15 · 14 Pro · 14 · 13 · 12 · 11 · XR e mais</p>
         <a href="#produtos" class="btn btn-laranja">Ver catálogo</a>
       </div>
       <div class="hero-img reveal">
@@ -690,21 +517,13 @@
     </div>
   </section>
 
-  <!-- PRODUTOS (TODOS OS TELEFONES) -->
+  <!-- PRODUTOS (TODOS OS IPHONES COM IMAGENS) -->
   <section id="produtos" class="produtos">
     <div class="container">
       <h2 class="titulo-secao reveal">Todos os iPhones</h2>
       <div class="cards-grid" id="cards-iphones"></div>
     </div>
   </section>
-
-  <!-- MODAL -->
-  <div id="modal" class="modal-overlay">
-    <div class="modal-content">
-      <button class="fechar-modal" id="fecharModal">×</button>
-      <div class="modal-body" id="modalBody"></div>
-    </div>
-  </div>
 
   <!-- CONTATO -->
   <section id="contato" class="contato">
@@ -731,7 +550,7 @@
     </div>
   </section>
 
-  <!-- FOOTER BEM FEITO (ESTILO TRADICIONAL) -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -749,19 +568,16 @@
             <li><a href="#quem-somos">Sobre nós</a></li>
             <li><a href="#produtos">Produtos</a></li>
             <li><a href="#contato">Contacto</a></li>
-            <li><a href="#">Política de privacidade</a></li>
-            <li><a href="#">Termos de uso</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Modelos</h4>
           <ul>
-            <li><a href="#">iPhone 15 Pro Max</a></li>
-            <li><a href="#">iPhone 15 Pro</a></li>
-            <li><a href="#">iPhone 14 Pro Max</a></li>
-            <li><a href="#">iPhone 13</a></li>
-            <li><a href="#">iPhone 12</a></li>
-            <li><a href="#">iPhone SE</a></li>
+            <li><a href="#produtos">iPhone 15 Pro Max</a></li>
+            <li><a href="#produtos">iPhone 15 Pro</a></li>
+            <li><a href="#produtos">iPhone 14 Pro Max</a></li>
+            <li><a href="#produtos">iPhone 13</a></li>
+            <li><a href="#produtos">iPhone 12</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -781,131 +597,165 @@
 
   <script>
     (function() {
-      // TODOS OS TELEFONES DISPONÍVEIS (vários modelos)
+      // TODOS OS IPHONES COM IMAGENS E NOMES SIMPLIFICADOS (SEM MODAL)
       const todosIphones = [
         { 
-          id: 1, 
-          nome: "iPhone 15 Pro Max 256GB", 
+          nome: "15 Pro Max", 
           preco: "1.490.000 kz", 
-          desc: "Titânio · USB‑C · Botão de acção", 
-          img: "https://placehold.co/300x300/333333/F15025?text=15+Pro+Max", 
-          descLong: "O mais avançado iPhone. Chip A17 Pro, corpo em titânio, zoom óptico 5x.",
-          caracteristicas: ["Ecrã 6.7'' ProMotion", "Chip A17 Pro", "Câmara 48MP", "Zoom 5x", "Titânio", "USB-C"],
-          cores: ["Titânio natural", "Titânio azul", "Titânio branco", "Titânio preto"]
+          desc: "Titânio · A17 Pro · 256GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=15+Pro+Max",
+          modelo: "iPhone 15 Pro Max 256GB Titânio"
         },
         { 
-          id: 2, 
-          nome: "iPhone 15 Pro 128GB", 
+          nome: "15 Pro", 
           preco: "1.290.000 kz", 
-          desc: "Titânio · A17 Pro", 
-          img: "https://placehold.co/300x300/333333/F15025?text=15+Pro", 
-          descLong: "iPhone 15 Pro com chip A17 Pro e câmara profissional.",
-          caracteristicas: ["Ecrã 6.1'' ProMotion", "Chip A17 Pro", "Câmara 48MP", "Zoom 3x", "Titânio"],
-          cores: ["Titânio natural", "Titânio azul", "Titânio branco", "Titânio preto"]
+          desc: "Titânio · A17 Pro · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=15+Pro",
+          modelo: "iPhone 15 Pro 128GB Titânio"
         },
         { 
-          id: 3, 
-          nome: "iPhone 15 Plus 128GB", 
+          nome: "15 Plus", 
           preco: "1.090.000 kz", 
-          desc: "Dynamic Island · Câmara 48MP", 
-          img: "https://placehold.co/300x300/333333/F15025?text=15+Plus", 
-          descLong: "Ecrã de 6.7'' com Dynamic Island e bateria de longa duração.",
-          caracteristicas: ["Ecrã 6.7'' OLED", "Chip A16", "Câmara 48MP", "USB-C", "Bateria todo dia"],
-          cores: ["Preto", "Rosa", "Amarelo", "Verde", "Azul"]
+          desc: "Dynamic Island · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=15+Plus",
+          modelo: "iPhone 15 Plus 128GB"
         },
         { 
-          id: 4, 
-          nome: "iPhone 15 128GB", 
+          nome: "15", 
           preco: "990.000 kz", 
-          desc: "Dynamic Island · USB-C", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+15", 
-          descLong: "iPhone 15 com Dynamic Island e câmara de 48MP.",
-          caracteristicas: ["Ecrã 6.1'' OLED", "Chip A16", "Câmara 48MP", "USB-C"],
-          cores: ["Preto", "Rosa", "Amarelo", "Verde", "Azul"]
+          desc: "Dynamic Island · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+15",
+          modelo: "iPhone 15 128GB"
         },
         { 
-          id: 5, 
-          nome: "iPhone 14 Pro Max 256GB", 
+          nome: "14 Pro Max", 
           preco: "1.250.000 kz", 
-          desc: "Dynamic Island · 48MP", 
-          img: "https://placehold.co/300x300/333333/F15025?text=14+Pro+Max", 
-          descLong: "iPhone 14 Pro Max com ecrã Always-On e Dynamic Island.",
-          caracteristicas: ["Ecrã 6.7'' ProMotion", "Chip A16", "Câmara 48MP", "Always-On", "Dynamic Island"],
-          cores: ["Roxo", "Dourado", "Prateado", "Preto"]
+          desc: "Dynamic Island · 256GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=14+Pro+Max",
+          modelo: "iPhone 14 Pro Max 256GB"
         },
         { 
-          id: 6, 
-          nome: "iPhone 14 Pro 128GB", 
+          nome: "14 Pro", 
           preco: "1.050.000 kz", 
-          desc: "Dynamic Island · Câmara 48MP", 
-          img: "https://placehold.co/300x300/333333/F15025?text=14+Pro", 
-          descLong: "iPhone 14 Pro com ecrã Always-On e processador A16.",
-          caracteristicas: ["Ecrã 6.1'' ProMotion", "Chip A16", "Câmara 48MP", "Always-On"],
-          cores: ["Roxo", "Dourado", "Prateado", "Preto"]
+          desc: "Dynamic Island · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=14+Pro",
+          modelo: "iPhone 14 Pro 128GB"
         },
         { 
-          id: 7, 
-          nome: "iPhone 13 128GB", 
+          nome: "14 Plus", 
+          preco: "950.000 kz", 
+          desc: "Ecrã 6.7'' · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=14+Plus",
+          modelo: "iPhone 14 Plus 128GB"
+        },
+        { 
+          nome: "14", 
+          preco: "890.000 kz", 
+          desc: "Chip A15 · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+14",
+          modelo: "iPhone 14 128GB"
+        },
+        { 
+          nome: "13 Pro Max", 
+          preco: "1.090.000 kz", 
+          desc: "ProMotion · 256GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=13+Pro+Max",
+          modelo: "iPhone 13 Pro Max 256GB"
+        },
+        { 
+          nome: "13 Pro", 
+          preco: "950.000 kz", 
+          desc: "Câmara teleobjetiva", 
+          img: "https://placehold.co/300x300/333333/F15025?text=13+Pro",
+          modelo: "iPhone 13 Pro 128GB"
+        },
+        { 
+          nome: "13", 
           preco: "790.000 kz", 
-          desc: "Câmara dupla · A15", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+13", 
-          descLong: "iPhone 13 com chip A15 e bateria de longa duração.",
-          caracteristicas: ["Ecrã 6.1'' OLED", "Chip A15", "Câmara dupla 12MP", "Modo Cinema"],
-          cores: ["Meia-noite", "Estelar", "Rosa", "Azul", "Vermelho"]
+          desc: "Chip A15 · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+13",
+          modelo: "iPhone 13 128GB"
         },
         { 
-          id: 8, 
-          nome: "iPhone 12 64GB", 
+          nome: "12 Pro Max", 
+          preco: "890.000 kz", 
+          desc: "Câmara tripla · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=12+Pro+Max",
+          modelo: "iPhone 12 Pro Max 128GB"
+        },
+        { 
+          nome: "12 Pro", 
+          preco: "790.000 kz", 
+          desc: "LIDAR · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=12+Pro",
+          modelo: "iPhone 12 Pro 128GB"
+        },
+        { 
+          nome: "12", 
           preco: "620.000 kz", 
-          desc: "5G · Ecrã OLED", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+12", 
-          descLong: "iPhone 12 com ecrã Super Retina e 5G.",
-          caracteristicas: ["Ecrã 6.1'' OLED", "Chip A14", "Câmara dupla 12MP", "5G"],
-          cores: ["Preto", "Branco", "Verde", "Azul"]
+          desc: "5G · OLED 6.1''", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+12",
+          modelo: "iPhone 12 64GB"
         },
         { 
-          id: 9, 
-          nome: "iPhone SE 2022 128GB", 
-          preco: "520.000 kz", 
-          desc: "Touch ID · A15", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+SE", 
-          descLong: "iPhone SE com chip A15 e Touch ID.",
-          caracteristicas: ["Ecrã 4.7''", "Chip A15", "Câmara 12MP", "Touch ID", "5G"],
-          cores: ["Meia-noite", "Estelar", "Vermelho"]
+          nome: "11 Pro Max", 
+          preco: "720.000 kz", 
+          desc: "Câmara tripla · 64GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=11+Pro+Max",
+          modelo: "iPhone 11 Pro Max 64GB"
         },
         { 
-          id: 10, 
-          nome: "iPhone 11 128GB", 
+          nome: "11 Pro", 
+          preco: "620.000 kz", 
+          desc: "Ecrã OLED 5.8''", 
+          img: "https://placehold.co/300x300/333333/F15025?text=11+Pro",
+          modelo: "iPhone 11 Pro 64GB"
+        },
+        { 
+          nome: "11", 
           preco: "480.000 kz", 
-          desc: "Câmara dupla · Resistente", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+11", 
-          descLong: "iPhone 11 com câmara ultra-wide e resistência à água.",
-          caracteristicas: ["Ecrã 6.1'' LCD", "Chip A13", "Câmara dupla 12MP", "Resistente"],
-          cores: ["Preto", "Branco", "Roxo", "Amarelo", "Verde"]
+          desc: "Câmara dupla · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+11",
+          modelo: "iPhone 11 128GB"
         },
         { 
-          id: 11, 
-          nome: "iPhone XR 128GB", 
+          nome: "XR", 
           preco: "390.000 kz", 
-          desc: "LCD · Cores vibrantes", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+XR", 
-          descLong: "iPhone XR com ecrã Liquid Retina e várias cores.",
-          caracteristicas: ["Ecrã 6.1'' LCD", "Chip A12", "Câmara 12MP", "Face ID"],
-          cores: ["Preto", "Branco", "Azul", "Amarelo", "Coral", "Vermelho"]
+          desc: "Liquid Retina · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+XR",
+          modelo: "iPhone XR 128GB"
         },
         { 
-          id: 12, 
-          nome: "iPhone X 64GB", 
+          nome: "XS Max", 
+          preco: "420.000 kz", 
+          desc: "OLED 6.5'' · 64GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=XS+Max",
+          modelo: "iPhone XS Max 64GB"
+        },
+        { 
+          nome: "XS", 
+          preco: "370.000 kz", 
+          desc: "OLED 5.8'' · 64GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+XS",
+          modelo: "iPhone XS 64GB"
+        },
+        { 
+          nome: "X", 
           preco: "340.000 kz", 
-          desc: "OLED · Design icónico", 
-          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+X", 
-          descLong: "iPhone X com ecrã OLED e Face ID, um clássico moderno.",
-          caracteristicas: ["Ecrã 5.8'' OLED", "Chip A11", "Câmara dupla 12MP", "Face ID"],
-          cores: ["Cinzento", "Prateado"]
+          desc: "Design icónico · 64GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+X",
+          modelo: "iPhone X 64GB"
+        },
+        { 
+          nome: "SE 2022", 
+          preco: "520.000 kz", 
+          desc: "Touch ID · A15 · 128GB", 
+          img: "https://placehold.co/300x300/333333/F15025?text=iPhone+SE",
+          modelo: "iPhone SE 2022 128GB"
         }
       ];
 
-      // Renderizar cards
+      // Renderizar cards (agora com botão Compra Directa)
       const container = document.getElementById('cards-iphones');
       function renderCards() {
         let html = '';
@@ -915,84 +765,22 @@
             <h3>${p.nome}</h3>
             <div class="preco">${p.preco}</div>
             <div class="desc">${p.desc}</div>
-            <button class="btn-comprar" data-id="${p.id}">Selecionar</button>
+            <button class="btn-comprar" data-modelo="${p.modelo}" data-preco="${p.preco}">Comprar</button>
           </div>`;
         });
         container.innerHTML = html;
       }
       renderCards();
 
-      // Modal
-      const modal = document.getElementById('modal');
-      const modalBody = document.getElementById('modalBody');
-      const closeBtn = document.getElementById('fecharModal');
-
-      function abrirModal(produto) {
-        const caracteristicasHTML = produto.caracteristicas.map(c => 
-          `<li><i class="fas fa-check-circle"></i> ${c}</li>`
-        ).join('');
-        
-        const coresHTML = produto.cores.map((cor, index) => 
-          `<div class="cor-item ${index === 0 ? 'selected' : ''}" data-cor="${cor}">
-            <div class="cor-bola" style="background-color: ${cor.includes('Titânio') ? '#8C8F91' : cor === 'Preto' ? '#222' : cor === 'Branco' ? '#fff' : cor === 'Dourado' ? '#D4AF37' : cor === 'Roxo' ? '#5E4B5C' : cor === 'Azul' ? '#4F6F8F' : cor === 'Vermelho' ? '#E30A17' : cor === 'Verde' ? '#87A96B' : cor === 'Amarelo' ? '#FFD700' : '#888'}; border: 2px solid #ccc;"></div>
-            <span class="cor-nome">${cor}</span>
-          </div>`
-        ).join('');
-
-        modalBody.innerHTML = `
-          <div class="modal-produto-img">
-            <img src="${produto.img}" alt="${produto.nome}">
-          </div>
-          <div class="modal-detalhes">
-            <h3>${produto.nome}</h3>
-            <div class="modal-preco">${produto.preco}</div>
-            
-            <div class="caracteristicas">
-              <h4><i class="fas fa-microchip"></i> Características</h4>
-              <ul>${caracteristicasHTML}</ul>
-            </div>
-            
-            <div class="seletor-cores">
-              <h4><i class="fas fa-palette"></i> Cores</h4>
-              <div class="cores-disponiveis" id="coresContainer">${coresHTML}</div>
-            </div>
-            
-            <div class="quantidade-selector">
-              <label>Quantidade:</label>
-              <input type="number" id="quantidade" min="1" value="1">
-            </div>
-            
-            <button class="btn-finalizar" id="finalizarCompraBtn">Finalizar Compra</button>
-          </div>
-        `;
-        
-        modal.classList.add('active');
-        
-        // Seleção de cores
-        document.querySelectorAll('.cor-item').forEach(item => {
-          item.addEventListener('click', function() {
-            document.querySelectorAll('.cor-item').forEach(i => i.classList.remove('selected'));
-            this.classList.add('selected');
-          });
-        });
-        
-        // Botão finalizar
-        document.getElementById('finalizarCompraBtn').addEventListener('click', function() {
-          const qtd = document.getElementById('quantidade').value || 1;
-          const corSel = document.querySelector('.cor-item.selected .cor-nome')?.textContent || produto.cores[0];
-          const msg = `Olá! Gostaria de comprar:%0A📱 ${produto.nome}%0A🎨 Cor: ${corSel}%0A💰 ${produto.preco}%0A📦 Quantidade: ${qtd}%0A%0ALuxuryTech Angola`;
-          window.open(`https://wa.me/244944000000?text=${msg}`, '_blank');
-        });
-      }
-
-      closeBtn.addEventListener('click', () => modal.classList.remove('active'));
-      modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
-
+      // Evento para botão Comprar (redireciona directo para WhatsApp)
       document.addEventListener('click', function(e) {
         if (e.target.classList.contains('btn-comprar')) {
-          const id = e.target.getAttribute('data-id');
-          const produto = todosIphones.find(p => p.id == id);
-          if (produto) abrirModal(produto);
+          const modelo = e.target.getAttribute('data-modelo');
+          const preco = e.target.getAttribute('data-preco');
+          
+          const mensagem = `Olá! Gostaria de comprar:%0A📱 Modelo: ${modelo}%0A💰 Preço: ${preco}%0A%0ALuxuryTech Angola`;
+          
+          window.open(`https://wa.me/244944000000?text=${mensagem}`, '_blank');
         }
       });
 
